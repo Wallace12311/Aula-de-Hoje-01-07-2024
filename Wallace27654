@@ -1,0 +1,107 @@
+import { useState } from "react"
+
+export default function Card(){
+    const [moeda1, setMoeda1] = useState({})
+    const [moeda2, setMoeda2] = useState({})
+
+    function handleMoeda1(event){
+        setMoeda1(event.target.value)
+    }
+
+    function handleMoeda2(event){
+        setMoeda2(event.target.value)
+    }
+
+    function converterMoeda(){
+
+    }
+
+
+    return (
+        <div className="">
+            <div className="topo">
+                <h2>Conversor</h2>
+            </div>
+            <div className="meio">
+                <div className="input">
+                    <label htmlFor="">
+                        De:
+                    </label>
+                    <select >
+                        <option value={""}>Selecione...</option>
+                        <option 
+                            value={
+                                {
+                                    valor:5.45,
+                                    simbolo:"US$"
+                                }
+                            }
+                        >USD</option>
+                        <option
+                            value={
+                                {
+                                    valor:1,
+                                    simbolo:"R$"
+                                }
+                            }
+                        >BRL</option>
+                        <option 
+                            value={
+                                {
+                                    valor:6.45,
+                                    simbolo:"€"
+                                }
+                            }
+                        >EUR</option>
+                    </select>
+                </div>
+                <div className="input">
+                    <label htmlFor="">
+                        Para:
+                    </label>
+                    <select>
+                        <option value={""}>Selecione...</option>
+                        <option 
+                            value={
+                                {
+                                    valor:5.45,
+                                    simbolo:"US$"
+                                }
+                            }
+                        >USD</option>
+                        <option 
+                            value={
+                                {
+                                    valor:1,
+                                    simbolo:"R$"
+                                }
+                            }
+                        >BRL</option>
+                        <option
+                            value={
+                                {
+                                    valor:6.45,
+                                    simbolo:"€"
+                                }
+                            }
+                        >EUR</option>
+                    </select>
+                </div>
+                <div className="input">
+                    <label htmlFor="">
+                        Valor:
+                    </label>
+                    <input type="number"/>
+                </div>
+            </div>
+            <div className="fim">
+                <button>
+                    Converter
+                </button>
+            </div>
+            <div className="resultado">
+                <p>Resultado: </p>
+            </div>
+        </div>
+    )
+}
